@@ -103,7 +103,3 @@ The application includes basic error handling for:
 - Never commit your `.env` file to version control
 - Keep your OpenAI API key secure
 - The application runs in debug mode by default (not recommended for production)
-
-## License
-
-MIT License 

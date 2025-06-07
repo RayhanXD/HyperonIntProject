@@ -9,9 +9,9 @@ class AIGenerator:
     def __init__(self):
         self.client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
         self.affiliate_links = {
-            "AFF_LINK_1": "https://amazon.com/affiliate/earbuds",
-            "AFF_LINK_2": "https://bestbuy.com/affiliate/headphones",
-            "AFF_LINK_3": "https://walmart.com/affiliate/audio"
+            "AFF_LINK_1": "https://amazon.com/affiliate/smart-home-hub",
+            "AFF_LINK_2": "https://bestbuy.com/affiliate/smart-lights",
+            "AFF_LINK_3": "https://walmart.com/affiliate/smart-thermostat"
         }
 
     def generate_blog_post(self, keyword: str, seo_data: Dict) -> str:
@@ -47,7 +47,6 @@ class AIGenerator:
 
         content = response.choices[0].message.content
 
-        # Replace affiliate link placeholders with actual links
         for placeholder, link in self.affiliate_links.items():
             content = content.replace(f"{{{placeholder}}}", link)
 

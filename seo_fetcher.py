@@ -4,22 +4,21 @@ from typing import Dict
 
 class SEOFetcher:
     def __init__(self):
-        # Mock data for demonstration
         self.mock_data = {
-            "wireless earbuds": {
-                "search_volume": 110000,
+            "smart home hub": {
+                "search_volume": 135000,
+                "keyword_difficulty": 72,
+                "avg_cpc": 3.80
+            },
+            "smart light bulbs": {
+                "search_volume": 98500,
                 "keyword_difficulty": 65,
-                "avg_cpc": 2.50
+                "avg_cpc": 2.90
             },
-            "best headphones": {
-                "search_volume": 90500,
-                "keyword_difficulty": 70,
-                "avg_cpc": 3.20
-            },
-            "noise cancelling headphones": {
-                "search_volume": 82300,
+            "smart thermostat": {
+                "search_volume": 89200,
                 "keyword_difficulty": 68,
-                "avg_cpc": 2.80
+                "avg_cpc": 3.40
             }
         }
  
@@ -31,7 +30,6 @@ class SEOFetcher:
         if keyword.lower() in self.mock_data:
             return self.mock_data[keyword.lower()]
         
-        # Generate random data for unknown keywords
         return {
             "search_volume": random.randint(1000, 100000),
             "keyword_difficulty": random.randint(1, 100),
